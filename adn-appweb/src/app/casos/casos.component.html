@@ -1,0 +1,123 @@
+<div class="container">
+    <h6>Ingrese una cadena de ADN para proesar:</h6>
+    <form [formGroup]="adnForm" (ngSubmit)="crearCaso()">
+        <div class="row">
+            <div class="col">
+                <label>Parte uno</label>
+                <input id="" type="text" formControlName="part_one" class="form-control" required>
+                <div *ngIf="(part_one?.dirty || part_one?.touched)">
+                    <div *ngIf="part_one?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label>Parte dos</label>
+                <input id="" type="text" formControlName="part_two" class="form-control" required>
+                <div *ngIf="(part_two?.dirty || part_two?.touched)">
+                    <div *ngIf="part_two?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <label>Parte tres</label>
+                <input id="" type="text" formControlName="part_three" class="form-control" required>
+                <div *ngIf="(part_three?.dirty || part_three?.touched)">
+                    <div *ngIf="part_three?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label>Parte cuatro</label>
+                <input id="" type="text" formControlName="part_four" class="form-control" required>
+                <div *ngIf="(part_four?.dirty || part_four?.touched)">
+                    <div *ngIf="part_four?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label>Parte Cinco</label>
+                <input id="" type="text" formControlName="part_five" class="form-control" required>
+                <div *ngIf="(part_five?.dirty || part_five?.touched)">
+                    <div *ngIf="part_five?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+            <div class="col ">
+                <label>Parte Seis</label>
+                <input id="" type="text" formControlName="part_six" class="form-control" required>
+                <div *ngIf="(part_six?.dirty || part_six?.touched)">
+                    <div *ngIf="part_six?.errors?.required"  class="col l12 alert alert-danger">
+                        Vificar información.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center submit ">
+            <button class="" type="submit" [disabled]="!adnForm.valid">Crear</button>
+        </div>
+    </form>
+
+    <div class="ctable container">
+        <div class="row">
+            <div class="col-lg-3 text-rigth">
+                <table>
+                    <ng-container  *ngFor="let itemi of ccadena.adn; let i = index">
+                        <tr class="col">
+                            <ng-container *ngFor="let itemj of itemi; let j = index">
+                                <th>
+                                    {{ccadena.adn[i][j]}}
+                                </th>
+                            </ng-container>
+                        </tr>
+                    </ng-container>
+                </table>
+            </div>
+            <div *ngIf="ccadena.malformaciones?.length >0 " class="col card">
+                <div  class="text-primary text-center">
+                    Malformaciones
+                </div>
+                <div class="row">
+
+                        <ng-container *ngFor="let itemmf of ccadena.malformaciones; let i = index">
+                            <span class="col-lg-3"> {{itemmf.tipo + ' X:'+ itemmf.x + ' Y:'+ itemmf.y }}</span>
+                        </ng-container>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Cadena</th>
+                <th scope="col">T. Malformación</th>
+                <th scope="col">Ver</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of datos">
+                <tr>
+                    <td>
+                        <ng-container  *ngFor="let itemcd of item.cadenaAdn; let k = index">
+                            {{item.cadenaAdn[k] + (k < (item.cadenaAdn?.length -1) ? " -" :"" ) }}
+                        </ng-container>
+                    </td>
+                    <td>{{item.tieneMalformacion? "Si": "No"}}</td>
+                    <td><div class="btn"  (click)="cargarObjetoActual(item)">Ver</div> </td>
+                </tr>
+            </ng-container>
+
+        </tbody>
+    </table>
+</div>
