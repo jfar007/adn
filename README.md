@@ -1,17 +1,18 @@
-# adn
-Caso de estudio ADN
 
-Se debe inicialmente descargar las dependencias del proyecto Maven (Spring Boot)
-mvn install
+# Caso de estudio ADN
+Debemos ejecutar una secuencia de domandos,como se describe a continuación:
 
-Luego ejecutar el proyecto
-mvn spring-boot:run
+1. Se debe inicialmente descargar las dependencias del proyecto Maven (Spring Boot):
+> *mvn install*
 
-Posteriormente nos dirigimos a la ruta /adn-appweb (Proyecto Angular)
-Descargamos las librerias asociadas
-npm install
+2. Luego ejecutar el proyecto:
+> *mvn spring-boot:run*
 
-Procedemos a ejecutar el proyecto Angular
-ng s
+3. Posteriormente nos dirigimos a la ruta /adn-appweb (Proyecto Angular) y descargamos las librerias asociadas:
 
-Ingresamos al navegador a la URL (http://localhost:4200)
+>*npm install*
+
+4. Procedemos a ejecutar el proyecto Angular:
+>*ng s*
+
+5. Ingresamos al navegador a la siguiente URL (http://localhost:4200)
