@@ -2,7 +2,7 @@
 # Caso de estudio ADN
 Debemos ejecutar una secuencia de domandos,como se describe a continuación:
 
-1. Se debe inicialmente descargar las dependencias del proyecto Maven (Spring Boot):
+1. Inicialmente descargar las dependencias del proyecto Maven (Spring Boot):
 > *mvn install*
 
 2. Luego ejecutar el proyecto:
